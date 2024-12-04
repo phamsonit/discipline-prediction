@@ -2,6 +2,8 @@
 A metadata based framework for discipline prediction and interdisciplinarity measure
 author: Hoang Son Pham, ECOOM-Hasselt University
 email: hoangson.pham@uhasselt.be
+
+cite this source code or related article: H. -S. Pham, H. Poelmans and A. Ali-Eldin, "A Metadata-Based Approach for Research Discipline Prediction Using Machine Learning Techniques and Distance Metrics," in IEEE Access, vol. 11, pp. 61995-62012, 2023, doi: 10.1109/ACCESS.2023.3287935.
 """
 import ast
 import os
@@ -127,7 +129,7 @@ if __name__ == "__main__":
     df_train = pd.read_csv(input_data_path)
     # df_train, df_test = train_test_split(df, test_size=0.2)
     if task == 'train':
-        # covert disciplines in form of text to list
+        # covert disciplines in form of text to list of integers
         df_train['disciplines'] = df_train['disciplines'].apply(lambda x: ast.literal_eval(x))
         # df_train = df_train_temp.reset_index()
         print('====> encoding labels')
